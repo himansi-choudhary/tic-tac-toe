@@ -1,0 +1,105 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: #02032c;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 3rem;
+}
+
+#scoreboard {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+#game {
+  display: grid;
+  grid-template-columns: repeat(3, 120px);
+  grid-template-rows: repeat(3, 120px);
+  gap: 5px;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.cell {
+  background-color: #72c4f3;
+  border: 2px solid #fff;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 20%;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cell:hover {
+  background: #b423c7;
+}
+
+.cell.clicked {
+  animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.cell.win {
+  background-color: #a0f5a0;
+  animation: win-glow 1s infinite alternate;
+}
+
+@keyframes win-glow {
+  from { box-shadow: 0 0 5px #00ff00; }
+  to   { box-shadow: 0 0 20px #00ff00; }
+}
+
+
+#status {
+  font-size: 1.2rem;
+  margin: 15px 0;
+}
+
+#restart {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #b423c7;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+  #game {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 4px;
+  }
+
+  .cell {
+    font-size: 2rem;
+  }
+
+  #restart {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  #scoreboard p {
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
