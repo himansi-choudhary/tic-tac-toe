@@ -9,12 +9,16 @@ body {
 
 h1 {
   margin-bottom: 10px;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 #scoreboard {
   margin: 10px 0;
   font-size: 1.2rem;
+}
+
+#mode, #difficulty {
+  margin: 5px;
 }
 
 #game {
@@ -87,7 +91,7 @@ h1 {
   }
 
   .cell {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   #restart {
